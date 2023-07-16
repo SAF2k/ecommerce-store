@@ -4,7 +4,7 @@
 const NavbarActions = () => {
 
     return(
-        <div className="flex ml-auto gap-x-2">hello</div>
+        <div className="flex ml-auto gap-x-2">hello </div>
     )
 }
 
