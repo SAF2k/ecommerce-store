@@ -1,12 +1,11 @@
-import { Billboard } from "@/types"
+import { Billboard } from "@/types";
 
 interface BillboardProps {
-    data: Billboard
+  data: Billboard;
 }
 
-
-const Billboard = ({data}: BillboardProps) => {
-console
+const Billboard = ({ data }: BillboardProps) => {
+  console;
   return (
     <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
       <div
@@ -21,6 +20,6 @@ console
       </div>
     </div>
   );
-}
+};
 
-export default Billboard
+export default Billboard;
