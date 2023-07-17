@@ -1,25 +1,21 @@
-'use client'
+"use client";
 
-import Image from "next/image"
-import { useRouter } from "next/navigation"
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { MouseEventHandler } from "react";
 import { Expand, ShoppingCartIcon } from "lucide-react";
 
-import IconButton from "./icon-button";
+import { Product } from "@/types";
 import useCart from "@/hooks/use-cart";
-
-import { Product } from "@/types"
 import UsePreviewModal from "@/hooks/use-preview-modal";
+import IconButton from "@/components/ui/icon-button";
+import Currency from "@/components/ui/currency";
 
 interface ProductCardProps {
-    data: Product
+  data: Product;
 }
 
-
-
-const ProductCard = ({data} : ProductCardProps) => {
-
-
+const ProductCard = ({ data }: ProductCardProps) => {
   const cart = useCart();
   const previewModal = UsePreviewModal();
   const router = useRouter();
@@ -39,8 +35,6 @@ const ProductCard = ({data} : ProductCardProps) => {
 
     cart.addItem(data);
   };
-
-    
 
   return (
     <div
@@ -68,8 +62,17 @@ const ProductCard = ({data} : ProductCardProps) => {
           </div>
         </div>
       </div>
+      {/* Description  */}
+      <div>
+        <p className="font-semibold text-lg"> {data.name}</p>
+        <p className="text-gray-500 text-sm"> {data.category?.name}</p>
+      </div>
+      {/* Price & Review  */}
+      <div className="flex items-center justify-between">
+        <Currency value={data?.price} />
+      </div>
     </div>
   );
-}
+};
 
-export default ProductCard
+export default ProductCard;
