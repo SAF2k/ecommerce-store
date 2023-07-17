@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { ShoppingBag } from "lucide-react";
 
-import Button  from "./ui/button"
+import Button  from "@/components/ui/button"
 
 
 const NavbarActions = () => {
@@ -16,7 +16,6 @@ const NavbarActions = () => {
     }, [])
 
     const router = useRouter()
-
 
     if (!isMounted) return null
 
