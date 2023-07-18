@@ -4,16 +4,17 @@ import qs from "query-string";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Button from "@/components/ui/button";
-import { Color, Size } from "@/types";
 import { cn } from "@/lib/utils";
+import { Color, Size } from "@/types";
 
 interface FilterProps {
-  data: (Size | Color)[];
+  data: Size[] | Color[]
   name: string;
   valueKey: string;
 }
 
 const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
+
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -55,8 +56,9 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
                 selectedValue === filter.id && "bg-black text-white"
               )}
               onClick={() => onClick(filter.id)}
-            />
-            {filter.name}
+            >
+              {filter.name}
+            </Button>
           </div>
         ))}
       </div>
