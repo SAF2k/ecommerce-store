@@ -8,13 +8,12 @@ import { cn } from "@/lib/utils";
 import { Color, Size } from "@/types";
 
 interface FilterProps {
-  data: Size[] | Color[]
+  data: (Size | Color)[];
   name: string;
   valueKey: string;
 }
 
 const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
-
   const searchParams = useSearchParams();
   const router = useRouter();
 
